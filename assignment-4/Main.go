@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"sort"
 	"time"
 )
 
@@ -11,7 +12,7 @@ func main() {
 	rand.Seed(time.Now().Unix())
 
 	min := 1
-	max := 10
+	max := 11
 
 	var collection [10]int
 
@@ -21,5 +22,17 @@ func main() {
 		i += 1
 	}
 
-	fmt.Print(collection)
+	fmt.Print("\n")
+
+	fmt.Print("Unsorted Array: ", collection, "\n")
+
+	sort.Ints(collection[:])
+	fmt.Print("Ascending sequential order: ", collection, "\n")
+
+	sort.Slice(collection[:], func(i, j int) bool {
+		return collection[i] >= collection[j]
+	})
+	fmt.Print("Descending sequential order: ", collection, "\n")
+
+	fmt.Print("\n")
 }
