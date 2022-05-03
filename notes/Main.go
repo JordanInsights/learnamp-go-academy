@@ -6,4 +6,5 @@ func main() {
 	// DeclaringVariables()
 	// DataTypes()
 	// Loops()
+	// Conditions()
 }
